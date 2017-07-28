@@ -6,5 +6,7 @@ Well now its modified to Ultimate Serial Terminal. Yoo Hoo
 
 I still have a lot of features i want to add but this is definitely a start. Well enjoy and contribute :) 
 
-Code is writen in C# and VB 2015 a lot of cleaning up to do but the functional parts works great.  
+Code is writen in C# and Visual Studio 2015. A lot of cleaning up to do but the functional parts works great.  
+
+Note: Not everyfunction on the GUI work yet
 
