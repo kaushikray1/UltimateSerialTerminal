@@ -85,8 +85,10 @@
             // 
             // rtbIncoming
             // 
+            this.rtbIncoming.EnableAutoDragDrop = true;
             this.rtbIncoming.Location = new System.Drawing.Point(12, 12);
             this.rtbIncoming.Name = "rtbIncoming";
+            this.rtbIncoming.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.rtbIncoming.Size = new System.Drawing.Size(763, 667);
             this.rtbIncoming.TabIndex = 1;
             this.rtbIncoming.Text = "";
@@ -163,6 +165,7 @@
             this.lblDSRStatus.Size = new System.Drawing.Size(30, 13);
             this.lblDSRStatus.TabIndex = 10;
             this.lblDSRStatus.Text = "DSR";
+            this.lblDSRStatus.Click += new System.EventHandler(this.LblDSRStatus_Click);
             // 
             // lblRIStatus
             // 
@@ -207,9 +210,9 @@
             // 
             // rtbOutgoing
             // 
-            this.rtbOutgoing.Location = new System.Drawing.Point(786, 418);
+            this.rtbOutgoing.Location = new System.Drawing.Point(781, 418);
             this.rtbOutgoing.Name = "rtbOutgoing";
-            this.rtbOutgoing.Size = new System.Drawing.Size(118, 31);
+            this.rtbOutgoing.Size = new System.Drawing.Size(121, 31);
             this.rtbOutgoing.TabIndex = 15;
             this.rtbOutgoing.Text = "";
             this.rtbOutgoing.Visible = false;
@@ -228,9 +231,9 @@
             // 
             // txtCommand
             // 
-            this.txtCommand.Location = new System.Drawing.Point(784, 392);
+            this.txtCommand.Location = new System.Drawing.Point(781, 392);
             this.txtCommand.Name = "txtCommand";
-            this.txtCommand.Size = new System.Drawing.Size(118, 20);
+            this.txtCommand.Size = new System.Drawing.Size(121, 20);
             this.txtCommand.TabIndex = 17;
             this.txtCommand.Visible = false;
             // 
@@ -256,6 +259,7 @@
             this.checkBox2.TabIndex = 19;
             this.checkBox2.Text = "HEX";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -307,6 +311,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "SEND";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -316,6 +321,7 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "SEND";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -325,6 +331,7 @@
             this.button3.TabIndex = 27;
             this.button3.Text = "SEND";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // checkBox5
             // 
@@ -428,6 +435,7 @@
             this.button5.TabIndex = 37;
             this.button5.Text = "Log";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // button6
             // 
@@ -437,6 +445,7 @@
             this.button6.TabIndex = 38;
             this.button6.Text = "Save Window";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // comboBox1
             // 

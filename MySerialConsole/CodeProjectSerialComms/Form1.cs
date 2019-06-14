@@ -331,5 +331,65 @@ namespace UltimateSerialTerminal
         {
             this.rtbIncoming.Clear();
         }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            switch (comboBox1.Text)
+            {
+                case "No End Line":
+                    ComPort.Write(textBox1.Text);
+                    rtbIncoming.Text += textBox1.Text;
+                    break;
+                case "New Line":
+                    ComPort.Write(textBox1.Text);
+                    ComPort.Write("\n");
+                    rtbIncoming.Text += textBox1.Text;
+                    rtbIncoming.Text += "\n";
+                    break;
+                case "Carriage Return":
+                    ComPort.Write(textBox1.Text);
+                    ComPort.Write("\r");
+                    rtbIncoming.Text += textBox1.Text;
+                    rtbIncoming.Text += "\r";
+                    break;
+                case "Both NL & CR":
+                    ComPort.Write(textBox1.Text);
+                    ComPort.Write("\n\r");
+                    rtbIncoming.Text += textBox1.Text;
+                    rtbIncoming.Text += "\n\r";
+                    break;
+            }
+            
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            ComPort.Write(textBox2.Text);
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            ComPort.Write(textBox3.Text);
+        }
+
+        private void LblDSRStatus_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
