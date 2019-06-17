@@ -14,3 +14,11 @@ D:\GoogleDrive\Resources\MySerialConsole\CodeProjectSerialComms\obj\Debug\Ultima
 D:\GoogleDrive\Resources\MySerialConsole\CodeProjectSerialComms\obj\Debug\CodeProjectSerialComms.Form1.resources
 D:\GoogleDrive\Resources\MySerialConsole\CodeProjectSerialComms\obj\Debug\CodeProjectSerialComms.Properties.Resources.resources
 D:\GoogleDrive\Resources\MySerialConsole\CodeProjectSerialComms\obj\Debug\UltimateSerialTerminal.csproj.GenerateResource.Cache
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\obj\Debug\CodeProjectSerialComms.Form1.resources
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\obj\Debug\CodeProjectSerialComms.Properties.Resources.resources
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\obj\Debug\UltimateSerialTerminal.csproj.GenerateResource.cache
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\obj\Debug\UltimateSerialTerminal.csproj.CoreCompileInputs.cache
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\obj\Debug\CodeProjectSerialComms.exe
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\obj\Debug\CodeProjectSerialComms.pdb
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\bin\Debug\CodeProjectSerialComms.exe
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\MySerialConsole\CodeProjectSerialComms\bin\Debug\CodeProjectSerialComms.pdb
