@@ -25,22 +25,30 @@ namespace Ultimate_Serial_Terminal
             string ComPortName = null;
 
             //Com Ports
-            ArrayComPortsNames = SerialPort.GetPortNames();
-            do
+            try
             {
-                index += 1;
-                comboBox3.Items.Add(ArrayComPortsNames[index]);
+                ArrayComPortsNames = SerialPort.GetPortNames();
+                do
+                {
+                    index += 1;
+                    comboBox3.Items.Add(ArrayComPortsNames[index]);
+
+                } while (!((ArrayComPortsNames[index] == ComPortName) || (index == ArrayComPortsNames.GetUpperBound(0))));
+                Array.Sort(ArrayComPortsNames);
 
 
-            } while (!((ArrayComPortsNames[index] == ComPortName) || (index == ArrayComPortsNames.GetUpperBound(0))));
-            Array.Sort(ArrayComPortsNames);
-
-            if (index == ArrayComPortsNames.GetUpperBound(0))
-            {
-                ComPortName = ArrayComPortsNames[0];
+                if (index == ArrayComPortsNames.GetUpperBound(0))
+                {
+                    ComPortName = ArrayComPortsNames[0];
+                }
+                //get first item print in text
+                comboBox3.Text = ArrayComPortsNames[0];
             }
-            //get first item print in text
-            comboBox3.Text = ArrayComPortsNames[0];
+            catch
+            {
+
+            }
+
             //Baud Rate
             comboBox1.Items.Add(2000000);
             comboBox1.Items.Add(300);
@@ -100,6 +108,37 @@ namespace Ultimate_Serial_Terminal
             comboBox7.Items.Add("Both NL & CR");
             //get the first item print it in the text 
             comboBox7.Text = comboBox7.Items[0].ToString();
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.Clear();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (button1.Text == "Port Closed")
+            {
+                button1.Text = "Port Open";
+                ComPort.PortName = Convert.ToString(comboBox3.Text);
+                ComPort.BaudRate = Convert.ToInt32(comboBox1.Text);
+                ComPort.DataBits = Convert.ToInt16(comboBox2.Text);
+                ComPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), comboBox6.Text);
+                ComPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), comboBox5.Text);
+                ComPort.Parity = (Parity)Enum.Parse(typeof(Parity), comboBox4.Text);
+                ComPort.Open();
+            }
+            else if (button1.Text == "Port Open")
+            {
+                button1.Text = "Port Closed";
+                ComPort.Close();
+
+            }
         }
     }
 }
