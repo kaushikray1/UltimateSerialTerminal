@@ -124,14 +124,15 @@ namespace Ultimate_Serial_Terminal
         {
             if (button1.Text == "Port Closed")
             {
-                ComPort.PortName = Convert.ToString(comboBox3.Text);
-                ComPort.BaudRate = Convert.ToInt32(comboBox1.Text);
-                ComPort.DataBits = Convert.ToInt16(comboBox2.Text);
-                ComPort.Parity = (Parity)Enum.Parse(typeof(Parity), comboBox5.Text);
-                ComPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), comboBox6.Text);
-                ComPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), comboBox4.Text);
                 try
                 {
+                    ComPort.PortName = Convert.ToString(comboBox3.Text);
+                    ComPort.BaudRate = Convert.ToInt32(comboBox1.Text);
+                    ComPort.DataBits = Convert.ToInt16(comboBox2.Text);
+                    ComPort.Parity = (Parity)Enum.Parse(typeof(Parity), comboBox5.Text);
+                    ComPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), comboBox6.Text);
+                    ComPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), comboBox4.Text);
+                
                     ComPort.Open();
                     button1.Text = "Port Open";
                     button1.BackColor = Color.LawnGreen;
