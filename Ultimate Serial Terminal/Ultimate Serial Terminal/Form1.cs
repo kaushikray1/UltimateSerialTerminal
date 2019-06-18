@@ -12,10 +12,33 @@ namespace Ultimate_Serial_Terminal
 {
     public partial class Form1 : Form
     {
-        SerialPort ComPort = new SerialPort();
+        readonly SerialPort ComPort = new SerialPort();
+        delegate void SetTextCallback(string text);
+        
+
         public Form1()
         {
             InitializeComponent();
+            ComPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(DataReceivedHandler);
+        }
+
+        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            string InComingData = String.Empty;
+            InComingData = ComPort.ReadExisting();
+            if (InComingData != String.Empty)
+            {
+                this.BeginInvoke(new SetTextCallback(SetText), new object[] { InComingData });
+            }
+        }
+        private void SetText(string text)
+        {
+            this.richTextBox1 .Text += text;
+            if (checkBox1.Checked)
+            {
+                this.richTextBox1.SelectionStart = this.richTextBox1.Text.Length;
+                this.richTextBox1.ScrollToCaret();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,7 +67,7 @@ namespace Ultimate_Serial_Terminal
                 //get first item print in text
                 comboBox3.Text = ArrayComPortsNames[0];
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("No Serial Device found", "Error", MessageBoxButtons.OK);
             }
@@ -134,10 +157,11 @@ namespace Ultimate_Serial_Terminal
                     ComPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), comboBox4.Text);
                 
                     ComPort.Open();
+                    ComPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
                     button1.Text = "Port Open";
-                    button1.BackColor = Color.LawnGreen;
+                    button1.BackColor = Color.PaleGreen;
                 }
-                catch (Exception ex)
+                catch
                 {
                     MessageBox.Show("Cannot open port", "Error", MessageBoxButtons.OK);
                 }
@@ -150,20 +174,50 @@ namespace Ultimate_Serial_Terminal
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void Button9_Click(object sender, EventArgs e)
         {
             try
             {
-                ComPort.Write(textBox1.Text);
-                richTextBox1.Text += textBox1.Text;
+                if (!checkBox4.Checked)
+                {
+                    switch (comboBox7.Text)
+                    {
+                        case "No End Line":
+                            ComPort.Write(textBox1.Text);
+                            richTextBox1.Text += textBox1.Text;
+                            break;
+                        case "New Line":
+                            ComPort.Write(textBox1.Text);
+                            ComPort.Write("\n");
+                            richTextBox1.Text += textBox1.Text;
+                            richTextBox1.Text += "\n";
+                            break;
+                        case "Carriage Return":
+                            ComPort.Write(textBox1.Text);
+                            ComPort.Write("\r");
+                            richTextBox1.Text += textBox1.Text;
+                            richTextBox1.Text += "\r";
+                            break;
+                        case "Both NL & CR":
+                            ComPort.Write(textBox1.Text);
+                            ComPort.Write("\n\r");
+                            richTextBox1.Text += textBox1.Text;
+                            richTextBox1.Text += "\n\r";
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NOT IMPLEMENTED YET", "need to be added", MessageBoxButtons.OK);
+                }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked)
             {
@@ -175,7 +229,7 @@ namespace Ultimate_Serial_Terminal
             }
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox3.Checked)
             {
@@ -187,9 +241,96 @@ namespace Ultimate_Serial_Terminal
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             
         }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!checkBox7.Checked)
+                {
+                    switch (comboBox7.Text)
+                    {
+                        case "No End Line":
+                            ComPort.Write(textBox1.Text);
+                            richTextBox1.Text += textBox2.Text;
+                            break;
+                        case "New Line":
+                            ComPort.Write(textBox2.Text);
+                            ComPort.Write("\n");
+                            richTextBox1.Text += textBox2.Text;
+                            richTextBox1.Text += "\n";
+                            break;
+                        case "Carriage Return":
+                            ComPort.Write(textBox2.Text);
+                            ComPort.Write("\r");
+                            richTextBox1.Text += textBox2.Text;
+                            richTextBox1.Text += "\r";
+                            break;
+                        case "Both NL & CR":
+                            ComPort.Write(textBox2.Text);
+                            ComPort.Write("\n\r");
+                            richTextBox1.Text += textBox2.Text;
+                            richTextBox1.Text += "\n\r";
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NOT IMPLEMENTED YET", "need to be added", MessageBoxButtons.OK);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!checkBox8.Checked)
+                {
+                    switch (comboBox7.Text)
+                    {
+                        case "No End Line":
+                            ComPort.Write(textBox1.Text);
+                            richTextBox1.Text += textBox3.Text;
+                            break;
+                        case "New Line":
+                            ComPort.Write(textBox3.Text);
+                            ComPort.Write("\n");
+                            richTextBox1.Text += textBox3.Text;
+                            richTextBox1.Text += "\n";
+                            break;
+                        case "Carriage Return":
+                            ComPort.Write(textBox3.Text);
+                            ComPort.Write("\r");
+                            richTextBox1.Text += textBox3.Text;
+                            richTextBox1.Text += "\r";
+                            break;
+                        case "Both NL & CR":
+                            ComPort.Write(textBox3.Text);
+                            ComPort.Write("\n\r");
+                            richTextBox1.Text += textBox3.Text;
+                            richTextBox1.Text += "\n\r";
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NOT IMPLEMENTED YET", "need to be added", MessageBoxButtons.OK);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
     }
 }

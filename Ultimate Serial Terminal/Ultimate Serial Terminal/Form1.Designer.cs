@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -49,7 +48,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -128,7 +126,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(784, 329);
+            this.button1.Location = new System.Drawing.Point(788, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 43);
             this.button1.TabIndex = 7;
@@ -173,7 +171,7 @@
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "Auto Scroll";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -184,7 +182,7 @@
             this.checkBox2.TabIndex = 12;
             this.checkBox2.Text = "DTR";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -195,7 +193,7 @@
             this.checkBox3.TabIndex = 13;
             this.checkBox3.Text = "RST";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.CheckBox3_CheckedChanged);
             // 
             // textBox1
             // 
@@ -318,7 +316,7 @@
             this.button9.TabIndex = 33;
             this.button9.Text = "SEND";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
             // 
             // button10
             // 
@@ -328,6 +326,7 @@
             this.button10.TabIndex = 34;
             this.button10.Text = "SEND";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
             // 
             // button11
             // 
@@ -337,6 +336,7 @@
             this.button11.TabIndex = 35;
             this.button11.Text = "SEND";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
             // 
             // button8
             // 
@@ -465,7 +465,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.Label label1;
