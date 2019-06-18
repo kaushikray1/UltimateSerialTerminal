@@ -16,3 +16,12 @@ C:\Users\Kaushik\Documents\GitHub\UltimateSerialTerminal\Ultimate Serial Termina
 C:\Users\Kaushik\Documents\GitHub\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csproj.CoreCompileInputs.cache
 C:\Users\Kaushik\Documents\GitHub\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.exe
 C:\Users\Kaushik\Documents\GitHub\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.pdb
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\bin\Debug\Ultimate Serial Terminal.exe
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\bin\Debug\Ultimate Serial Terminal.pdb
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csprojAssemblyReference.cache
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate_Serial_Terminal.Form1.resources
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate_Serial_Terminal.Properties.Resources.resources
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csproj.GenerateResource.cache
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csproj.CoreCompileInputs.cache
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.exe
+F:\GIT\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.pdb

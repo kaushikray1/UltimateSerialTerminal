@@ -50,8 +50,6 @@ namespace CodeProjectSerialComms  //UltimateSerialTerminal
                 ComPortName = ArrayComPortsNames[0];
             }
         }
-
-
         //-----------------------------------------------------------------------------------------------------
 
         private void port_DataReceived_1(object sender, SerialDataReceivedEventArgs e)

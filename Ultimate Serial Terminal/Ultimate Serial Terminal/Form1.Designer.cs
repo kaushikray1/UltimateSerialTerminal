@@ -105,7 +105,7 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(788, 183);
+            this.comboBox4.Location = new System.Drawing.Point(788, 290);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(123, 21);
             this.comboBox4.TabIndex = 4;
@@ -113,7 +113,7 @@
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(788, 237);
+            this.comboBox5.Location = new System.Drawing.Point(788, 183);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(123, 21);
             this.comboBox5.TabIndex = 5;
@@ -121,7 +121,7 @@
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(788, 290);
+            this.comboBox6.Location = new System.Drawing.Point(788, 237);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(123, 21);
             this.comboBox6.TabIndex = 6;
@@ -173,6 +173,7 @@
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "Auto Scroll";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -183,6 +184,7 @@
             this.checkBox2.TabIndex = 12;
             this.checkBox2.Text = "DTR";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -193,6 +195,7 @@
             this.checkBox3.TabIndex = 13;
             this.checkBox3.Text = "RST";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // textBox1
             // 
@@ -315,6 +318,7 @@
             this.button9.TabIndex = 33;
             this.button9.Text = "SEND";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 

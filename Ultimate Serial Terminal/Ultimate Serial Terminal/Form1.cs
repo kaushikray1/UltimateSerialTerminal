@@ -23,7 +23,7 @@ namespace Ultimate_Serial_Terminal
             string[] ArrayComPortsNames = null;
             int index = -1;
             string ComPortName = null;
-
+            button1.BackColor = Color.PaleVioletRed;
             //Com Ports
             try
             {
@@ -44,9 +44,9 @@ namespace Ultimate_Serial_Terminal
                 //get first item print in text
                 comboBox3.Text = ArrayComPortsNames[0];
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show("No Serial Device found", "Error", MessageBoxButtons.OK);
             }
 
             //Baud Rate
@@ -124,21 +124,71 @@ namespace Ultimate_Serial_Terminal
         {
             if (button1.Text == "Port Closed")
             {
-                button1.Text = "Port Open";
                 ComPort.PortName = Convert.ToString(comboBox3.Text);
                 ComPort.BaudRate = Convert.ToInt32(comboBox1.Text);
                 ComPort.DataBits = Convert.ToInt16(comboBox2.Text);
-                ComPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), comboBox6.Text);
-                ComPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), comboBox5.Text);
-                ComPort.Parity = (Parity)Enum.Parse(typeof(Parity), comboBox4.Text);
-                ComPort.Open();
+                ComPort.Parity = (Parity)Enum.Parse(typeof(Parity), comboBox5.Text);
+                ComPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), comboBox6.Text);
+                ComPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), comboBox4.Text);
+                try
+                {
+                    ComPort.Open();
+                    button1.Text = "Port Open";
+                    button1.BackColor = Color.LawnGreen;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Cannot open port", "Error", MessageBoxButtons.OK);
+                }
             }
             else if (button1.Text == "Port Open")
             {
                 button1.Text = "Port Closed";
+                button1.BackColor = Color.PaleVioletRed;
                 ComPort.Close();
-
             }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ComPort.Write(textBox1.Text);
+                richTextBox1.Text += textBox1.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                ComPort.DtrEnable = true;
+            }
+            else
+            {
+                ComPort.DtrEnable = false;
+            }
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                ComPort.RtsEnable = true;
+            }
+            else
+            {
+                ComPort.RtsEnable = false;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
