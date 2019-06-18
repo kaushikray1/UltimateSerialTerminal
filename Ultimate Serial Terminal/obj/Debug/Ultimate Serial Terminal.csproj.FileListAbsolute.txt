@@ -34,3 +34,12 @@ C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\Ult
 C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.exe
 C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.pdb
 C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csprojAssemblyReference.cache
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\bin\Debug\Ultimate Serial Terminal.exe
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\bin\Debug\Ultimate Serial Terminal.pdb
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csprojAssemblyReference.cache
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Debug\Ultimate_Serial_Terminal.Form1.resources
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Debug\Ultimate_Serial_Terminal.Properties.Resources.resources
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csproj.GenerateResource.cache
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.csproj.CoreCompileInputs.cache
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.exe
+C:\Users\swukxr3\Desktop\UST\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Debug\Ultimate Serial Terminal.pdb

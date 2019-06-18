@@ -46,35 +46,8 @@ namespace Ultimate_Serial_Terminal
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string[] ArrayComPortsNames = null;
-            int index = -1;
-            string ComPortName = null;
             button1.BackColor = Color.PaleVioletRed;
-            //Com Ports
-            try
-            {
-                ArrayComPortsNames = SerialPort.GetPortNames();
-                do
-                {
-                    index += 1;
-                    comboBox3.Items.Add(ArrayComPortsNames[index]);
-
-                } while (!((ArrayComPortsNames[index] == ComPortName) || (index == ArrayComPortsNames.GetUpperBound(0))));
-                Array.Sort(ArrayComPortsNames);
-
-
-                if (index == ArrayComPortsNames.GetUpperBound(0))
-                {
-                    ComPortName = ArrayComPortsNames[0];
-                }
-                //get first item print in text
-                comboBox3.Text = ArrayComPortsNames[0];
-            }
-            catch
-            {
-                MessageBox.Show("No Serial Device found", "Error", MessageBoxButtons.OK);
-            }
-
+            Scan_COM_Ports();
             //Baud Rate
             comboBox1.Items.Add(2000000);
             comboBox1.Items.Add(300);
@@ -338,6 +311,41 @@ namespace Ultimate_Serial_Terminal
 
         }
 
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            Scan_COM_Ports();
+        }
 
+        private void Scan_COM_Ports()
+        {
+            string[] ArrayComPortsNames = null;
+            int index = -1;
+            string ComPortName = null;
+            //Com Ports
+            try
+            {
+                ArrayComPortsNames = SerialPort.GetPortNames();
+                do
+                {
+                    index += 1;
+                    comboBox3.Items.Clear();
+                    comboBox3.ResetText();
+                    comboBox3.Items.Add(ArrayComPortsNames[index]);
+
+                } while (!((ArrayComPortsNames[index] == ComPortName) || (index == ArrayComPortsNames.GetUpperBound(0))));
+                Array.Sort(ArrayComPortsNames);
+
+                if (index == ArrayComPortsNames.GetUpperBound(0))
+                {
+                    ComPortName = ArrayComPortsNames[0];
+                }
+                //get first item print in text
+                comboBox3.Text = ArrayComPortsNames[0];
+            }
+            catch
+            {
+                //MessageBox.Show("No Serial Device found", "Error", MessageBoxButtons.OK);
+            }
+        }
     }
 }
