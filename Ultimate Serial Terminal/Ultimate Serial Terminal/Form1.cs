@@ -33,7 +33,10 @@ namespace Ultimate_Serial_Terminal
         }
         private void SetText(string text)
         {
-            this.richTextBox1 .Text += text;
+            richTextBox1.SelectionColor = Color.Blue;
+            richTextBox1.SelectedText = text;
+            //this.richTextBox1.Text += text;
+            
             if (checkBox1.Checked)
             {
                 this.richTextBox1.SelectionStart = this.richTextBox1.Text.Length;
@@ -180,29 +183,118 @@ namespace Ultimate_Serial_Terminal
             {
                 if (!checkBox4.Checked)
                 {
+                    richTextBox1.SelectionColor = Color.DarkOrange;
                     switch (comboBox7.Text)
                     {
                         case "No End Line":
                             ComPort.Write(textBox1.Text);
-                            richTextBox1.Text += textBox1.Text;
+                            richTextBox1.SelectedText = textBox1.Text;
                             break;
                         case "New Line":
                             ComPort.Write(textBox1.Text);
                             ComPort.Write("\n");
-                            richTextBox1.Text += textBox1.Text;
-                            richTextBox1.Text += "\n";
+                            richTextBox1.SelectedText = textBox1.Text;
+                            richTextBox1.SelectedText = "\n";
                             break;
                         case "Carriage Return":
                             ComPort.Write(textBox1.Text);
                             ComPort.Write("\r");
-                            richTextBox1.Text += textBox1.Text;
-                            richTextBox1.Text += "\r";
+                            richTextBox1.SelectedText = textBox1.Text;
+                            richTextBox1.SelectedText = "\r";
                             break;
                         case "Both NL & CR":
                             ComPort.Write(textBox1.Text);
                             ComPort.Write("\n\r");
-                            richTextBox1.Text += textBox1.Text;
-                            richTextBox1.Text += "\n\r";
+                            richTextBox1.SelectedText = textBox1.Text;
+                            richTextBox1.SelectedText = "\n\r";
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NOT IMPLEMENTED YET", "need to be added", MessageBoxButtons.OK);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!checkBox7.Checked)
+                {
+                    richTextBox1.SelectionColor = Color.DarkRed;
+                    switch (comboBox7.Text)
+                    {
+                        case "No End Line":
+                            ComPort.Write(textBox2.Text);
+                            richTextBox1.SelectedText = textBox2.Text;
+                            break;
+                        case "New Line":
+                            ComPort.Write(textBox2.Text);
+                            ComPort.Write("\n");
+                            richTextBox1.SelectedText = textBox2.Text;
+                            richTextBox1.SelectedText = "\n";
+                            break;
+                        case "Carriage Return":
+                            ComPort.Write(textBox2.Text);
+                            ComPort.Write("\r");
+                            richTextBox1.SelectedText = textBox2.Text;
+                            richTextBox1.SelectedText = "\r";
+                            break;
+                        case "Both NL & CR":
+                            ComPort.Write(textBox2.Text);
+                            ComPort.Write("\n\r");
+                            richTextBox1.SelectedText = textBox2.Text;
+                            richTextBox1.SelectedText = "\n\r";
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NOT IMPLEMENTED YET", "need to be added", MessageBoxButtons.OK);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!checkBox8.Checked)
+                {
+                    richTextBox1.SelectionColor = Color.DarkGreen;
+                    switch (comboBox7.Text)
+                    {
+                        case "No End Line":
+                            ComPort.Write(textBox3.Text);
+                            richTextBox1.SelectedText = textBox3.Text;
+                            break;
+                        case "New Line":
+                            ComPort.Write(textBox3.Text);
+                            ComPort.Write("\n");
+                            richTextBox1.SelectedText = textBox3.Text;
+                            richTextBox1.SelectedText = "\n";
+                            break;
+                        case "Carriage Return":
+                            ComPort.Write(textBox3.Text);
+                            ComPort.Write("\r");
+                            richTextBox1.SelectedText = textBox3.Text;
+                            richTextBox1.SelectedText = "\r";
+                            break;
+                        case "Both NL & CR":
+                            ComPort.Write(textBox3.Text);
+                            ComPort.Write("\n\r");
+                            richTextBox1.SelectedText = textBox3.Text;
+                            richTextBox1.SelectedText = "\n\r";
                             break;
                     }
                 }
@@ -243,94 +335,9 @@ namespace Ultimate_Serial_Terminal
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void Button10_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!checkBox7.Checked)
-                {
-                    switch (comboBox7.Text)
-                    {
-                        case "No End Line":
-                            ComPort.Write(textBox1.Text);
-                            richTextBox1.Text += textBox2.Text;
-                            break;
-                        case "New Line":
-                            ComPort.Write(textBox2.Text);
-                            ComPort.Write("\n");
-                            richTextBox1.Text += textBox2.Text;
-                            richTextBox1.Text += "\n";
-                            break;
-                        case "Carriage Return":
-                            ComPort.Write(textBox2.Text);
-                            ComPort.Write("\r");
-                            richTextBox1.Text += textBox2.Text;
-                            richTextBox1.Text += "\r";
-                            break;
-                        case "Both NL & CR":
-                            ComPort.Write(textBox2.Text);
-                            ComPort.Write("\n\r");
-                            richTextBox1.Text += textBox2.Text;
-                            richTextBox1.Text += "\n\r";
-                            break;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("NOT IMPLEMENTED YET", "need to be added", MessageBoxButtons.OK);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
-            }
-        }
-
-        private void Button11_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!checkBox8.Checked)
-                {
-                    switch (comboBox7.Text)
-                    {
-                        case "No End Line":
-                            ComPort.Write(textBox1.Text);
-                            richTextBox1.Text += textBox3.Text;
-                            break;
-                        case "New Line":
-                            ComPort.Write(textBox3.Text);
-                            ComPort.Write("\n");
-                            richTextBox1.Text += textBox3.Text;
-                            richTextBox1.Text += "\n";
-                            break;
-                        case "Carriage Return":
-                            ComPort.Write(textBox3.Text);
-                            ComPort.Write("\r");
-                            richTextBox1.Text += textBox3.Text;
-                            richTextBox1.Text += "\r";
-                            break;
-                        case "Both NL & CR":
-                            ComPort.Write(textBox3.Text);
-                            ComPort.Write("\n\r");
-                            richTextBox1.Text += textBox3.Text;
-                            richTextBox1.Text += "\n\r";
-                            break;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("NOT IMPLEMENTED YET", "need to be added", MessageBoxButtons.OK);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Port is not open.", "Error", MessageBoxButtons.OK);
-            }
-        }
 
     }
 }
